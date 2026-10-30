@@ -1,0 +1,15 @@
+# File rác hệ điều hành
+.DS_Store
+
+# Cache Python & Notebook
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.venv/
+env/
+
+# Backup & Checkpoint 
+backup/
+*.zip
+*.pt
+checkpoints/

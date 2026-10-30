@@ -6,19 +6,19 @@ Thư mục xuất kết quả: /Users/mac/Downloads/Thai/KLTN/output
 
 [PHASE 0] ĐANG TẠO BẢN SAO LƯU RAW VÀ KIỂM TRA DỮ LIỆU...
   -> Bản backup đã tồn tại: /Users/mac/Downloads/Thai/KLTN/backup/Hanoi_RealEstate_2026_Raw_BACKUP.csv
-  -> Kích thước Raw: 30,698 dòng x 23 cột
+  -> Kích thước Raw: 31,291 dòng x 23 cột
 
 [PHASE 1] LỌC BỎ CÁC BẢN GHI KHÔNG HỢP LỆ...
-  1.1 Loại bỏ 3,260 tin có giá 'Thỏa thuận'. Còn lại: 27,438 dòng.
-  1.2 Loại bỏ 1 dòng trùng ID. Còn lại: 27,437 dòng.
-  1.3 Loại bỏ 4 dòng 'Bán đất' (đất nền ≠ nhà ở). Còn lại: 27,433 dòng.
+  1.1 Loại bỏ 3,338 tin có giá 'Thỏa thuận'. Còn lại: 27,953 dòng.
+  1.2 Loại bỏ 1 dòng trùng ID. Còn lại: 27,952 dòng.
+  1.3 Loại bỏ 4 dòng 'Bán đất' (đất nền ≠ nhà ở). Còn lại: 27,948 dòng.
   1.4 Đang kiểm tra Near-Duplicates (Structural & Fuzzy Matching)...
-  -> Phát hiện 924 tin trùng lặp/gần trùng.
+  -> Phát hiện 940 tin trùng lặp/gần trùng.
   -> Giữ lại và gắn cờ 'is_near_dup' để phục vụ review/audit an toàn.
 
 [PHASE 2] PARSING VÀ CHUẨN HÓA CÁC ĐẶC TRƯNG STRUCTURED...
-  2.1 Parse price -> price_vnd & log_price (Loại 1 bản ghi không hợp lệ/gõ nhầm < 100tr). Còn lại: 27,432 dòng.
-  2.2 Parse area -> float. Còn lại: 27,432 dòng.
+  2.1 Parse price -> price_vnd & log_price (Loại 1 bản ghi không hợp lệ/gõ nhầm < 100tr). Còn lại: 27,947 dòng.
+  2.2 Parse area -> float. Còn lại: 27,947 dòng.
   2.3 Cross-check price / area vs price_per_m2: 0 dòng lệch >20% (gắn cờ).
   2.4 Điền khuyết (Imputation) bedrooms, toilets bằng Grouped Median...
 
@@ -27,41 +27,42 @@ Thư mục xuất kết quả: /Users/mac/Downloads/Thai/KLTN/output
   3.2 Đã xuất file Audit kiểm toán rò rỉ (200 mẫu): /Users/mac/Downloads/Thai/KLTN/output/leakage_audit.csv
 
 [PHASE 4] GẮN CỜ NGOẠI LAI (OUTLIERS) THEO PHÂN LOẠI BĐS...
-  -> Outliers giá (IQR 1.5): 1,754 dòng (6.39%)
-  -> Phân khúc siêu sang (Luxury IQR 3.0): 750 dòng (2.73%)
+  -> Outliers giá (IQR 1.5): 1,784 dòng (6.38%)
+  -> Phân khúc siêu sang (Luxury IQR 3.0): 767 dòng (2.74%)
   -> Outliers diện tích (<10m2 hoặc >2000m2): 1 dòng
 
 [PHASE 5] XUẤT CÁC TẬP TIN KẾT QUẢ ĐẦU RA...
-  [FILE 1] Hanoi_Clean_Tabular.csv : 27,432 dòng x 25 cột
-  [FILE 2] Hanoi_Clean_Text.csv    : 27,432 dòng x 5 cột
-  [FILE 3] Hanoi_Clean_Full.csv    : 27,432 dòng x 29 cột
+  [FILE 1] Hanoi_Clean_Tabular.csv : 27,947 dòng x 25 cột
+  [FILE 2] Hanoi_Clean_Text.csv    : 27,947 dòng x 5 cột
+  [FILE 3] Hanoi_Clean_Full.csv    : 27,947 dòng x 29 cột
 
 [THỐNG KÊ CHI TIẾT]
   --- Phân bổ property_type ---
-    condo: 11,605
-    private_house: 11,182
-    villa: 4,645
+    condo: 11,784
+    private_house: 11,392
+    villa: 4,771
   --- Phân bổ house_type ---
-    Căn hộ chung cư: 11,605
-    Nhà riêng: 11,182
-    Biệt thự/Liền kề: 4,645
+    Căn hộ chung cư: 11,784
+    Nhà riêng: 11,392
+    Biệt thự/Liền kề: 4,771
   --- Phân bổ legal ---
-    Sổ đỏ/Sổ hồng: 22,506
-    Không rõ: 2,772
-    HĐMB: 2,003
-    Đang chờ sổ: 136
+    Sổ đỏ/Sổ hồng: 22,902
+    Không rõ: 2,847
+    HĐMB: 2,046
+    Đang chờ sổ: 137
     Sở hữu lâu dài: 15
   --- Phân bổ interior ---
-    Đầy đủ: 14,310
-    Không rõ: 7,936
-    Cơ bản: 3,656
-    Không nội thất: 1,066
-    Cao cấp: 464
+    Đầy đủ: 14,537
+    Không rõ: 8,117
+    Cơ bản: 3,726
+    Không nội thất: 1,096
+    Cao cấp: 471
   --- Phân bổ geo_group ---
-    near_central: 11,568
-    new_urban: 9,431
-    central: 4,213
-    suburban: 2,220
+    near_central: 11,756
+    new_urban: 9,547
+    central: 4,269
+    suburban: 2,262
+    unknown: 113
 
-[HOÀN THÀNH] Toàn bộ quy trình thực thi trong 16.88 giây.
-Tổng số bản ghi sạch sẵn sàng huấn luyện: 27,432 (89.36% raw data).
+[HOÀN THÀNH] Toàn bộ quy trình thực thi trong 16.77 giây.
+Tổng số bản ghi sạch sẵn sàng huấn luyện: 27,947 (89.31% raw data).
